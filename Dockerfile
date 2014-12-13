@@ -11,6 +11,7 @@ ENV GEM_HOME /usr/local/lib/ruby/gems/2.1.0
 RUN apt-get -q update && \
   DEBIAN_FRONTEND=noninteractive apt-get -qy --no-install-recommends install \
     build-essential \
+    ca-certificates \
     curl \
     libffi-dev \
     libreadline6-dev \
@@ -24,6 +25,7 @@ RUN apt-get -q update && \
   ./configure --disable-install-doc && \
   make -j$(nproc) && \
   make install && \
+  gem update --system && \
   cd .. && \
   rm -rf ruby-$RUBY_VERSION ruby-$RUBY_VERSION.tar.bz2 /tmp/* /var/tmp/* && \
   apt-get -qy clean autoclean autoremove && \
