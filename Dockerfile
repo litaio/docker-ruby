@@ -3,12 +3,12 @@ MAINTAINER Jimmy Cuadra <jimmy@jimmycuadra.com>
 
 RUN echo 'gem: --no-document' > /usr/local/etc/gemrc
 
-ENV RUBY_MAJOR_MINOR_VERSION 2.1
-ENV RUBY_VERSION 2.1.5
-ENV RUBY_TARBALL_MD5 a7c3e5fec47eff23091b566e9e1dac1b
-ENV GEM_HOME /usr/local/lib/ruby/gems/2.1.0
+ENV RUBY_MAJOR_MINOR_VERSION 2.2
+ENV RUBY_VERSION 2.2.0
+ENV RUBY_TARBALL_MD5 d03cd4690fec1fff81d096d1c1255fde
+ENV GEM_HOME /usr/local/lib/ruby/gems/${RUBY_MAJOR_MINOR_VERSION}.0
 
-RUN apt-get -q update && \
+RUN apt-get -qq update && \
   DEBIAN_FRONTEND=noninteractive apt-get -qy --no-install-recommends install \
     build-essential \
     ca-certificates \
