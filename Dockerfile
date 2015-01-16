@@ -9,8 +9,7 @@ ENV RUBY_TARBALL_MD5 d03cd4690fec1fff81d096d1c1255fde
 ENV GEM_HOME /usr/local/lib/ruby/gems/${RUBY_MAJOR_MINOR_VERSION}.0
 ENV LANG en_US.UTF-8
 
-RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8
-locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections && \
+RUN echo -e "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8\nlocales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections && \
   apt-get -qq update && \
   DEBIAN_FRONTEND=noninteractive apt-get -qy --no-install-recommends install \
     build-essential \
