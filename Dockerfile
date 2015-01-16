@@ -3,7 +3,7 @@ MAINTAINER Jimmy Cuadra <jimmy@jimmycuadra.com>
 
 RUN echo 'gem: --no-document' > /usr/local/etc/gemrc && \
   echo 'locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8' | debconf-set-selections && \
-  echo 'locales locales/default_environment_locale select en_US.UTF-8' | debconf-set-selections && \
+  echo 'locales locales/default_environment_locale select en_US.UTF-8' | debconf-set-selections
 
 ENV RUBY_MAJOR_MINOR_VERSION 2.2
 ENV RUBY_VERSION 2.2.0
