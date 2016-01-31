@@ -5,9 +5,9 @@ RUN echo 'gem: --no-document' > /usr/local/etc/gemrc && \
   echo 'locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8' | debconf-set-selections && \
   echo 'locales locales/default_environment_locale select en_US.UTF-8' | debconf-set-selections
 
-ENV RUBY_MAJOR_MINOR_VERSION 2.2
-ENV RUBY_VERSION 2.2.3
-ENV RUBY_TARBALL_SHA512 795f1b66a6d4f0baef897068899c3a1a4370ce1268618e6a7d6d4720234444259f371d1ba2e174b2f7580265e9f18eda3f295fbb087447aa6e8fb7a0f07526ce
+ENV RUBY_MAJOR_MINOR_VERSION 2.3
+ENV RUBY_VERSION 2.3.0
+ENV RUBY_TARBALL_SHA512 77b707359e754c3616699d21697752741497c719dc3d6fdfb55ed639e76d52560d293ae54cbe5c63be78dc73fbe60f1b8615d704d017bdfe1994aa9747d26a6c
 ENV GEM_HOME /usr/local/lib/ruby/gems/${RUBY_MAJOR_MINOR_VERSION}.0
 
 RUN apt-get -qq update && \
